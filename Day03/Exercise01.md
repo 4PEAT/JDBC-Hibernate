@@ -1,52 +1,42 @@
+**Task Description:**
 
+You are tasked with developing a Java application to manage departments, employees, and projects using Hibernate for data persistence. The application should allow users to perform CRUD (Create, Read, Update, Delete) operations on departments, employees, and projects, as well as associate employees with departments and projects. Below are detailed requirements for each component:
 
-###  Employee Management System Using Hibernate
+1. **Department Management:**
+   - Users should be able to create new departments by providing a unique name.
+   - Existing departments can be updated, where users can modify the department's name.
+   - Departments can be deleted from the system.
 
-#### Objective
-Develop an employee management system leveraging Hibernate for ORM. This system will manage departments, employees, and projects, highlighting the use of bidirectional relationships to efficiently navigate and manage related entities.
+2. **Employee Management:**
+   - Users should have the ability to add new employees, specifying their name, position, and the department they belong to.
+   - Existing employee records can be updated, allowing users to modify the employee's name, position, or department association.
+   - Employees can be removed from the system.
 
-#### Detailed Steps
+3. **Project Management:**
+   - Users should be able to create new projects, providing a unique title for each project.
+   - Existing projects can be updated, allowing users to modify the project's title.
+   - Projects can be deleted from the system.
 
-1. **Environment Setup**
-   - Install Java JDK, set up an IDE, and initialize a Maven project.
-   - Add Hibernate and database dependencies in `pom.xml`.
-   - Configure Hibernate using `hibernate.cfg.xml`.
+4. **Association Management:**
+   - Employees can be associated with multiple projects, and projects can have multiple employees assigned to them.
+   - Departments should have a collection of employees associated with them.
 
-2. **Entity Relationships and Annotations**
-   - **Department Entity**:
-     - Fields for `id` and `name`.
-     - Bidirectional one-to-many relationship with `Employee`, utilizing `@OneToMany` and `mappedBy`.
-   - **Employee Entity**:
-     - Fields for `id`, `name`, and `position`.
-     - Many-to-one relationship with `Department` using `@ManyToOne`.
-     - Many-to-many relationship with `Project`, ensuring it's bidirectional with `@ManyToMany` and `mappedBy`.
-   - **Project Entity**:
-     - Fields for `id` and `title`.
-     - Bidirectional many-to-many relationship with `Employee` using `@ManyToMany` and a join table.
+5. **Data Persistence:**
+   - Use Hibernate for data persistence, configuring the database connection and mapping entities using annotations.
+   - Ensure that data integrity is maintained during CRUD operations, and proper cascading behavior is defined for entity associations.
 
-3. **DAO Layer**
-   - Implement DAOs for each entity, focusing on CRUD operations.
-   - Include methods for associating employees with departments and projects.
+6. **Main Application:**
+   - Implement a `Main` class to demonstrate the functionality of the application.
+   - Use instances of DAO (Data Access Object) classes to interact with the database for CRUD operations.
 
-4. **Operations and Data Management**
-   - Demonstrate creating departments, employees, projects, and managing their associations.
-   - Show how to navigate relationships, like retrieving all employees of a department or all projects an employee is working on.
+7. **User Interface (Optional):**
+   - Consider implementing a simple user interface, such as a command-line interface or a basic GUI, to facilitate interaction with the application.
+   - The user interface should provide options for creating, updating, and deleting departments, employees, and projects.
 
-5. **Testing and Validation**
-   - Use a `Main` class to demonstrate the system's capabilities, including CRUD operations and relationship management.
+8. **Testing and Documentation:**
+   - Thoroughly test the application to ensure that all CRUD operations and entity associations work as expected.
+   - Document the setup instructions for running the application, including any required dependencies or configuration steps.
+   - Provide clear comments in the code to explain the functionality of each method and class, as well as any assumptions made during development.
 
-#### Advanced Features (Optional)
-- Implement lazy loading to optimize data retrieval.
-- Add transaction management to ensure data integrity.
-
-#### Deliverables
-- Source code for entities with bidirectional relationships.
-- DAO implementations for CRUD operations and relationship management.
-- A `Main` class showcasing system functionality.
-
-#### Evaluation Criteria
-- Correct implementation of bidirectional relationships.
-- Effective use of Hibernate for CRUD operations and relationship management.
-- Code clarity and adherence to best practices.
-
-This approach, focusing on bidirectional relationships, offers a comprehensive understanding of managing complex relationships in Hibernate, preparing you for more advanced data modeling and manipulation tasks in real-world applications.
+9. **Submission:**
+   - Submit the complete source code, including DAO classes, entity classes, configuration files, and any additional documentation required.
