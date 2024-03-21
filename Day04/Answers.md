@@ -1,4 +1,35 @@
 
+
+#### Question 1: What does JDBC stand for?
+- **Answer: B) Java Database Connectivity**
+
+#### Question 2: Which of the following is used to establish a connection with the database?
+- **Answer: A) DriverManager**
+
+#### Question 3: Which interface is used to execute SQL queries and return the results?
+- **Answer: B) Statement**
+
+#### Question 4: In JDBC, what represents an SQL statement that you execute against the database?
+- **Answer: C) Statement**
+
+#### Question 5: Which method is used to start a transaction in JDBC?
+- **Answer: C) setAutoCommit(false)**
+
+#### Question 6: How can you retrieve data from a ResultSet?
+- **Answer: B) By calling next() method followed by getXXX() methods**
+
+#### Question 7: What does the executeUpdate() method return?
+- **Answer: B) The number of rows affected by the query**
+
+#### Question 8: Which of the following is true about PreparedStatement?
+- **Answer: C) It is used for executing precompiled SQL statements multiple times efficiently.**
+
+#### Question 9: What does the setAutoCommit(boolean autoCommit) method do?
+- **Answer: B) It allows manual control over transaction commits.**
+
+#### Question 10: Which method is used to manually commit changes made during a transaction?
+- **Answer: A) commit()**
+
 #### Question 1: What does ORM stand for, in the context of Hibernate?
 - **Answer: B) Object-Relational Mapping**
 
