@@ -1,4 +1,3 @@
-Sure! Here is an improved version of the task description for the Employee Management System with Hibernate:
 
 ### Task: Employee Management System with Hibernate
 
