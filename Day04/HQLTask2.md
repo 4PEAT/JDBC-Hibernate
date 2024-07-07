@@ -231,3 +231,143 @@ public void clearDepartmentFromEmployees(Long departmentId) {
     }
 }
 ```
+_______________________________________________________________________________________________________________________
+
+Sure, here's how you can use the methods in each DAO class to perform various operations.
+
+### Example Usage of `DepartmentDAO` Methods
+
+#### Get All Departments
+```java
+public class Main {
+    public static void main(String[] args) {
+        DepartmentDAO departmentDAO = new DepartmentDAO();
+        List<Department> departments = departmentDAO.getAllDepartments();
+        System.out.println("All Departments:");
+        for (Department department : departments) {
+            System.out.println("Department: " + department.getName());
+        }
+    }
+}
+```
+
+#### Get Department by ID
+```java
+public class Main {
+    public static void main(String[] args) {
+        DepartmentDAO departmentDAO = new DepartmentDAO();
+        Department department = departmentDAO.getDepartmentById(1L);
+        System.out.println("Department: " + department.getName());
+    }
+}
+```
+
+### Example Usage of `EmployeeDAO` Methods
+
+#### Get All Employees
+```java
+public class Main {
+    public static void main(String[] args) {
+        EmployeeDAO employeeDAO = new EmployeeDAO();
+        List<Employee> employees = employeeDAO.getAllEmployees();
+        System.out.println("All Employees:");
+        for (Employee employee : employees) {
+            System.out.println("Employee: " + employee.getName());
+        }
+    }
+}
+```
+
+#### Get Employees by Department ID
+```java
+public class Main {
+    public static void main(String[] args) {
+        EmployeeDAO employeeDAO = new EmployeeDAO();
+        List<Employee> employees = employeeDAO.getEmployeesByDepartment(1L);
+        System.out.println("Employees in Department 1:");
+        for (Employee employee : employees) {
+            System.out.println("Employee: " + employee.getName());
+        }
+    }
+}
+```
+
+#### Get Employees with Projects
+```java
+public class Main {
+    public static void main(String[] args) {
+        EmployeeDAO employeeDAO = new EmployeeDAO();
+        List<Employee> employees = employeeDAO.getEmployeesWithProjects();
+        System.out.println("Employees with Projects:");
+        for (Employee employee : employees) {
+            System.out.println("Employee: " + employee.getName() + ", Projects: " + employee.getProjects().size());
+        }
+    }
+}
+```
+
+#### Get Project Count by Employee
+```java
+public class Main {
+    public static void main(String[] args) {
+        EmployeeDAO employeeDAO = new EmployeeDAO();
+        List<Object[]> projectCounts = employeeDAO.getProjectCountByEmployee();
+        System.out.println("Number of Projects per Employee:");
+        for (Object[] result : projectCounts) {
+            System.out.println("Employee: " + result[0] + ", Projects: " + result[1]);
+        }
+    }
+}
+```
+
+#### Update Employee Position by Department
+```java
+public class Main {
+    public static void main(String[] args) {
+        EmployeeDAO employeeDAO = new EmployeeDAO();
+        employeeDAO.updateEmployeePositionByDepartment(1L, "Senior Developer");
+        System.out.println("Updated positions for employees in Department 1.");
+    }
+}
+```
+
+#### Clear Department from Employees
+```java
+public class Main {
+    public static void main(String[] args) {
+        EmployeeDAO employeeDAO = new EmployeeDAO();
+        employeeDAO.clearDepartmentFromEmployees(1L);
+        System.out.println("Cleared department from employees in Department 1.");
+    }
+}
+```
+
+### Example Usage of `ProjectDAO` Methods
+
+#### Get All Projects
+```java
+public class Main {
+    public static void main(String[] args) {
+        ProjectDAO projectDAO = new ProjectDAO();
+        List<Project> projects = projectDAO.getAllProjects();
+        System.out.println("All Projects:");
+        for (Project project : projects) {
+            System.out.println("Project: " + project.getTitle());
+        }
+    }
+}
+```
+
+#### Get Projects with Employees
+```java
+public class Main {
+    public static void main(String[] args) {
+        ProjectDAO projectDAO = new ProjectDAO();
+        List<Project> projects = projectDAO.getProjectsWithEmployees();
+        System.out.println("Projects with Employees:");
+        for (Project project : projects) {
+            System.out.println("Project: " + project.getTitle() + ", Employees: " + project.getEmployees().size());
+        }
+    }
+}
+```
